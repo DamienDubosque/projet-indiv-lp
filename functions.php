@@ -50,6 +50,7 @@ function nft_offf_setup() {
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__( 'Primary', 'nft_offf' ),
+			'footer' => esc_html__( 'Pied de page', 'nft_offf' )
 		)
 	);
 
@@ -138,8 +139,7 @@ add_action( 'widgets_init', 'nft_offf_widgets_init' );
  * Enqueue scripts and styles.
  */
 function nft_offf_scripts() {
-	wp_enqueue_style( 'nft_offf-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'nft_offf-style', 'rtl', 'replace' );
+	wp_enqueue_style( 'nft_offf-style', get_template_directory_uri() . '/css/style.css' );
 
 	wp_enqueue_script( 'nft_offf-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
@@ -168,6 +168,9 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+// Plugin ACF
+require_once get_template_directory() . '/inc/plugins/acf.php';
 
 /**
  * Load Jetpack compatibility file.

@@ -61,25 +61,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 /* Document
 	 ========================================================================== */
-@font-face {
-    font-family: 'Monument Extended';
-    src: url('/fonts/MonumentExtended-Ultrabold.woff2') format('woff2'),
-        url('/fonts/MonumentExtended-Ultrabold.woff') format('woff'),
-        url('/fonts/MonumentExtended-Ultrabold.ttf') format('ttf');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
 
-@font-face {
-    font-family: 'Mukta Vaani';
-    src: url('../nft_offf/fonts/MuktaVaani-Regular.woff2') format('woff2'),
-        url('../nft_offf/fonts/MuktaVaani-Regular.woff') format('woff'),
-        url('../nft_offf/fonts/MuktaVaani-Regular.ttf') format('ttf');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -992,13 +974,81 @@ textarea {
 
 /* ------------------- CSS custom -------------------- */
 
+$primary: #121212; 
+$secondary: #FE9E75;
+$white: #FFF;
+$black: #000;
+
+@font-face {
+    font-family: 'Monument Extended';
+    src: url('../fonts/MonumentExtended-Ultrabold.woff2') format('woff2'),
+        url('../fonts/MonumentExtended-Ultrabold.woff') format('woff'),
+        url('../fonts/MonumentExtended-Ultrabold.ttf') format('ttf');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mukta Vaani';
+    src: url('../fonts/MuktaVaani-Regular.woff2') format('woff2'),
+        url('../fonts/MuktaVaani-Regular.woff') format('woff'),
+        url('../fonts/MuktaVaani-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+*{
+	padding: 0;
+	margin: 0;
+}
+
 h1, h2, h3, a, span{
-	font-family: 'Monument Extended' !important;
+	font-family: 'Monument Extended';
 	text-decoration: none;
 }
 
-p, button, input{
+h1{
+	font-size: 50px;
+	margin: 0 0 50px;
+	@media screen and (min-width: 768px) {
+		font-size: 80px;
+	}
+}
+
+h2{
+	font-size: 25px;
+	text-align: center;
+	margin: 64px 0;
+	@media screen and (min-width: 768px) {
+		font-size: 60px;
+	}		
+}
+
+a:not(footer a, header a){
+	font-size: 13px;
+	padding: 15px;
+	background-color: #F5F5F5;
+	color: $black!important;
+}
+
+
+h4, p, button, input{
 	font-family: 'Mukta Vaani';
+}
+
+h4{
+	font-size: 25px;
+	@media screen and (min-width: 768px) {
+		font-size: 45px;
+	}
+}
+
+p{
+	font-size: 15px;
+	@media screen and (min-width: 768px) {
+		font-size: 18px;
+	}
 }
 
 header{
@@ -1017,50 +1067,191 @@ header>div{
 	width: fit-content;
 }
 
-.main-navigation ul{
-	gap: 20px;
-}
 .main-navigation{
 	width: auto;
+    ul{
+        gap: 20px;
+    }
 }
 
 body{
 	padding: 0 25px;
+    @media screen and (min-width: 768px){
+        padding: 0 50px;
+    }
 }
 
 footer{
 	margin: 0 -25px;
 	padding: 20px 25px;
 	border-top: 3px solid #FE9E75;
-}
-
-footer a, footer a:visited{
-	color: #696868;
-}
-
-footer .main-navigation-footer ul{
-	display: grid;
-	grid-template-columns: 3fr repeat(3, 1fr);
-	font-size: 10px;
-	gap: 5px;
-	
-}
-
-@media screen and (min-width: 768px) {
-	body{
-		padding: 0 50px;
-	}
-	
-	footer{
-		margin: 0 -50px;
+    a, a:visited{
+        color: #696868;
+    }
+    .main-navigation-footer ul{
+        display: grid;
+	    grid-template-columns: 3fr repeat(3, 1fr);
+	    font-size: 10px;
+	    gap: 5px; 
+        @media screen and (min-width: 1000px) {
+            grid-template-columns: 5fr 1fr 1fr 1fr;
+        }
+        li:nth-of-type(n+2){
+            text-align: end;
+        }
+    }
+    @media screen and (min-width: 768px){
+        margin: 0 -50px;
 		padding: 20px 50px;
 		font-size: 16px;
-	}
+    }
 }
 
-@media screen and (min-width: 1000px) {
+/* ------------------- Front Page -------------------- */
+
+.front-page{
+	&__banner{
+		height: 100vh;
+		margin: -92px -25px 0;
+		padding: 92px 25px;
+		display: flex;
+		align-items: center;
+		// background: center / cover no-repeat url('/img/ruin_now_orange1.png');
+		background-color: darkgrey;
+		@media screen and (min-width: 768px){
+			margin: -88px -50px 0;
+			padding: 88px 50px;
+			justify-content: end;
+		}
+	}
+	h1, h4{
+		text-align: center;
+		@media screen and (min-width: 768px) {
+			text-align: right;
+		}
+	}
 	
-	footer .main-navigation-footer ul{
-		grid-template-columns: 5fr 1fr 1fr 1fr;
+	a{
+		text-transform: uppercase;
+	}
+
+	h1{
+		color: $secondary;
+	}
+
+	&__banner-content{
+		@media screen and (min-width: 768px) {
+			max-width: 547px;
+		}
+		@media screen and (min-width: 1024px) {
+			margin-right: 164px;
+		}
+		p{
+			@media screen and (min-width: 768px) {
+				text-align: right;
+			}
+		}
+		a{
+			margin: 0 auto;
+			width: fit-content;
+			display: block;
+			@media screen and (min-width: 768px) {
+				margin: 0 0 0 auto;
+			}
+		}
+	}
+	&__collection{
+		p{
+			@media screen and (min-width: 768px) {
+				max-width: 900px;
+				margin: 0 auto 30px;
+			}
+		}
+		a{
+			margin: 0 auto;
+			width: fit-content;
+			display: block;
+		}
+	}
+
+	&__nfts-card{
+		width: 326px;
+		height: 492px;
+		padding: 18px 18px 32px;
+		border-radius: 15px;
+		background: linear-gradient(300deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.5) 100%);
+		position: relative;
+	}
+
+	&__nfts-title{
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 14px;
+		p{
+			font-family: 'Monument Extended';
+			font-size: 16px;
+			margin: 0;
+		}
+	}
+
+	&__nfts-img{
+		height: 290px;
+		width: auto;
+		background: aquamarine;
+		margin-bottom: 10px;
+		border-radius: 15px;
+	}
+
+	&__nfts-bid{
+		display: flex;
+		justify-content: space-between;
+		div{
+			p{
+				margin: 0;
+				&:last-of-type{
+					font-family: 'Monument Extended';
+					font-size: 16px;
+				}
+			}
+			
+		}
+		a{
+			height: fit-content;
+		}
+	}
+
+	&__offf-container{
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
+		margin-bottom: 50px;
+		@media screen and (min-width: 768px) {
+			flex-direction: row-reverse;
+			margin-bottom: 90px;
+		}
+		a{
+			margin: 0 auto;
+			width: fit-content;
+			display: block;
+			@media screen and (min-width: 768px) {
+				margin: 0;
+			}
+		}
+	}
+
+	&__offf-img{
+		width: 100%;
+		height: 300px;
+		background-color: grey;
+		@media screen and (min-width: 768px) {
+			width: 50%;
+		}
+	}
+
+	&__offf-content{
+		@media screen and (min-width: 768px) {
+			width: 50%;
+		}
+		
 	}
 }
