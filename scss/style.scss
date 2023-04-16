@@ -1038,6 +1038,7 @@ h4, p, button, input{
 }
 
 h4{
+	font-weight: 500;
 	font-size: 25px;
 	@media screen and (min-width: 768px) {
 		font-size: 45px;
@@ -1057,6 +1058,10 @@ header{
 	justify-content: space-between;
 	align-items: center;
 	margin: 32px 0;
+}
+
+.site-branding, #site-navigation{
+	z-index: 2;
 }
 
 p.site-title{
@@ -1090,14 +1095,20 @@ footer{
     }
     .main-navigation-footer ul{
         display: grid;
-	    grid-template-columns: 3fr repeat(3, 1fr);
+	    grid-template-rows: repeat(4, 1fr);
 	    font-size: 10px;
 	    gap: 5px; 
+		@media screen and (min-width: 400px) {
+			grid-template-columns: 3fr repeat(3, 1fr);
+		}
         @media screen and (min-width: 1000px) {
             grid-template-columns: 5fr 1fr 1fr 1fr;
         }
         li:nth-of-type(n+2){
-            text-align: end;
+			@media screen and (min-width: 400px) {
+				text-align: end;
+			}
+            
         }
     }
     @media screen and (min-width: 768px){
@@ -1111,17 +1122,26 @@ footer{
 
 .front-page{
 	&__banner{
+		position: relative;
 		height: 100vh;
-		margin: -92px -25px 0;
-		padding: 92px 25px;
+		margin: -112px -25px 0;
+		padding: 92px 25px 92px 0;
 		display: flex;
 		align-items: center;
-		// background: center / cover no-repeat url('/img/ruin_now_orange1.png');
-		background-color: darkgrey;
+		@media screen and (min-width: 425px) {
+			margin: -92px -25px 0;
+		}
 		@media screen and (min-width: 768px){
-			margin: -88px -50px 0;
-			padding: 88px 50px;
+			margin: -92px -50px 0;
+			padding: 92px 0 92px 50px;
 			justify-content: end;
+		}
+		img{
+			position: absolute;
+			width: 100vw;
+			height: 100vh;
+			object-fit: cover;
+			z-index: -1;
 		}
 	}
 	h1, h4{
@@ -1137,14 +1157,19 @@ footer{
 
 	h1{
 		color: $secondary;
+		margin: 0;
 	}
 
 	&__banner-content{
+		z-index: 1;
+		padding-left: 25px;
 		@media screen and (min-width: 768px) {
 			max-width: 547px;
+			padding-right: 50px;
 		}
 		@media screen and (min-width: 1024px) {
 			margin-right: 164px;
+			padding: 0;
 		}
 		p{
 			@media screen and (min-width: 768px) {
@@ -1181,6 +1206,10 @@ footer{
 		border-radius: 15px;
 		background: linear-gradient(300deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.5) 100%);
 		position: relative;
+	}
+
+	&__nfts-container{
+		overflow-x: scroll;
 	}
 
 	&__nfts-title{
@@ -1242,9 +1271,13 @@ footer{
 	&__offf-img{
 		width: 100%;
 		height: 300px;
-		background-color: grey;
 		@media screen and (min-width: 768px) {
 			width: 50%;
+		}
+		img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
 		}
 	}
 

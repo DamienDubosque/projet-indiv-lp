@@ -1,17 +1,46 @@
 <?php get_header(); ?>
 
+<?php 
+        $banner = get_field( 'image_banner_home' ); 
+        $img   = wp_get_attachment_image( $banner, 'full' );
+        $subheading = get_field( 'subheading_header_home' );
+        $chapo = get_field( 'chapo_header_home' );
+        $button = get_field( 'button_header_home' );
+    ?> 
+
 <div class="front-page">
-    <div class="front-page__banner">
+    <div class="front-page__banner">   
+    <?php echo $img; ?>
         <div class="front-page__banner-content">
             <h1><?php the_title() ?></h1>
-            <h4>Giving and Learning Our Way</h4>
-            <p>Discover the new collection of NFT made by Damien Dubosque. Take a seat and discover the abyss thanks to the different NFT created.</p>
-            <a href="/">BUY ON OPENSEA</a>
+            <h4><?php echo $subheading; ?></h4>
+            <p><?php echo $chapo; ?></p>
+            <a href="/"><?php echo $button; ?></a>
         </div>
     </div>
-    <div class="front-page__nfts">
+    <?php 
+        $nft = get_field( 'nft' ); 
+        $img_nft   = wp_get_attachment_image( $nft, 'full' );
+        $collecton_nft = get_field( 'collection_name' );
+        $name_nft = get_field( 'nft_name' );
+        $author_nft = get_field( 'author' );
+        $buy_text_nft = get_field( 'buy_text' );
+        $price_nft = get_field( 'price' );
+        $link_nft = get_field( 'link_url' );
+    ?> 
+
+    
+    <div class="front-page__nfts"> 
         <h2>Discover the GLOW Collection</h2>
+        <?php if(have_posts()) : ?>
         <div class="front-page__nfts-container">
+            <?php while(have_posts()) : the_post(); 
+
+                get_template_part('template-parts/card', 'card');
+                
+            endwhile; ?>
+
+
             <div class="front-page__nfts-card">
                 <div class="front-page__nfts-img"></div>
                 <div class="front-page__nfts-title">
@@ -28,21 +57,36 @@
                 </div>
             </div>
         </div>
+        <?php endif ?>
     </div>
+    
+
     <div class="front-page__collection">
-        <h2>About the collection</h2>
-        <p>The idea of the collection is to go deep into the water in order to discover the sea bed and forgotten places. The way the depths are represented allows us to show that these depths are not necessarily only populated by animals, and rather discover several elements that belong to the past.</p>
-        <p>The light beam on each NFT of the collection will allow to put in light forgotten civilizations following the rise of the water level. This also allows to show and make everyone aware of these environmental issues.</p>
-        <a href="/">Learn more</a>
+    <?php 
+        $title_collection = get_field( 'title_collection' );
+        $text_collection = get_field( 'text_collection' );
+        $button_collection = get_field( 'button_collection' );
+    ?> 
+        <h2><?php echo $title_collection; ?></h2>
+        <p><?php echo $text_collection; ?></p>
+        <a href="/"><?php echo $button_collection; ?></a>
     </div>
+
     <div class="front-page__offf">
-        <h2>Target the OFFF festival</h2>
+    <?php 
+        $offf = get_field( 'image_offf' ); 
+        $img   = wp_get_attachment_image( $offf, 'full' );
+        $title_offf = get_field( 'title_offf' );
+        $text_offf = get_field( 'text_offf' );
+        $button_offf = get_field( 'button_offf' );
+    ?> 
+        <h2><?php echo $title_offf; ?></h2>
         <div class="front-page__offf-container">
-        <div class="front-page__offf-img"></div>
+        <div class="front-page__offf-img"><?php echo $img; ?></div>
             <div class="front-page__offf-content">
-                <p>Why highlight the OFFF festival on this site ? The answer is simple, one of my NFT will be exhibited in Barcelona during the OFFF which will take place from March 23 to 25, 2023.I will indeed have this chance to show my work in a very big design festival. I owe this to my current training which is the third year of Webdesign located in Montbeliard in the east of France. My NFT and those of my classmates will be represented as if we were looking through a porthole to see the depths of the sea. This festival will allow us to discover many new inspirations and conferences.
+                <p><?php echo $text_offf; ?>
                 </p>
-                <a href="/">LEARN MORE</a>
+                <a href="/"><?php echo $button_offf; ?></a>
             </div>
         </div>
     </div>
