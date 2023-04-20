@@ -1186,7 +1186,7 @@ footer .main-navigation-footer ul {
   display: block;
 }
 .front-page__nfts-card {
-  width: 326px;
+  min-width: 326px;
   height: 492px;
   padding: 18px 18px 32px;
   border-radius: 15px;
@@ -1195,6 +1195,9 @@ footer .main-navigation-footer ul {
 }
 .front-page__nfts-container {
   overflow-x: scroll;
+  display: flex;
+  gap: 50px;
+  padding: 0 10px 20px;
 }
 .front-page__nfts-title {
   display: flex;
@@ -1206,10 +1209,9 @@ footer .main-navigation-footer ul {
   font-size: 16px;
   margin: 0;
 }
-.front-page__nfts-img {
+.front-page__nfts-img img {
   height: 290px;
   width: auto;
-  background: aquamarine;
   margin-bottom: 10px;
   border-radius: 15px;
 }

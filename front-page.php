@@ -39,23 +39,6 @@
                 get_template_part('template-parts/card', 'card');
                 
             endwhile; ?>
-
-
-            <div class="front-page__nfts-card">
-                <div class="front-page__nfts-img"></div>
-                <div class="front-page__nfts-title">
-                    <p>G.L.O.W</p>
-                    <p>Modern #1</p>
-                </div>
-                <p>Created By Damien Dubosque</p>
-                <div class="front-page__nfts-bid">
-                    <div>
-                        <p>Current bid</p>
-                        <p>0.01 ETH</p>
-                    </div>
-                    <a href="/">VIEW NFT</a>
-                </div>
-            </div>
         </div>
         <?php endif ?>
     </div>

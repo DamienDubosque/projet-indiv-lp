@@ -1202,7 +1202,7 @@ footer{
 	}
 
 	&__nfts-card{
-		width: 326px;
+		min-width: 326px;
 		height: 492px;
 		padding: 18px 18px 32px;
 		border-radius: 15px;
@@ -1212,6 +1212,9 @@ footer{
 
 	&__nfts-container{
 		overflow-x: scroll;
+		display: flex;
+		gap: 50px;
+		padding: 0 10px 20px;
 	}
 
 	&__nfts-title{
@@ -1226,11 +1229,13 @@ footer{
 	}
 
 	&__nfts-img{
-		height: 290px;
-		width: auto;
-		background: aquamarine;
-		margin-bottom: 10px;
-		border-radius: 15px;
+		img{
+			height: 290px;
+			width: auto;
+			margin-bottom: 10px;
+			border-radius: 15px;
+		}
+		
 	}
 
 	&__nfts-bid{
