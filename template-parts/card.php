@@ -3,6 +3,8 @@
         $args = array(
             'post_type' => 'nft',
             'posts_per_page' => -1, // Afficher toutes les publications
+            'orderby' => 'date',
+            'order' => 'ASC',
         );
         $query = new WP_Query( $args );
 
@@ -13,8 +15,7 @@
                 $query->the_post();
 
                 $post_id = get_the_id();
-                $nft = get_field( 'nft', $post_id ); 
-                $img_nft   = wp_get_attachment_image( $nft, 'full' );
+                $nft = get_field( 'nft', $post_id );
                 $collection_nft = get_field( 'collection_name' );
                 $name_nft = get_field( 'nft_name' );
                 $author_nft = get_field( 'author' );

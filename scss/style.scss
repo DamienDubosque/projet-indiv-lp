@@ -1456,3 +1456,165 @@ footer{
 		}
 	}
 }
+
+.about-collection{
+	&__banner{
+		position: relative;
+		height: 100vh;
+		margin: -112px -25px 0;
+		padding: 92px 25px 92px 0;
+		display: flex;
+		align-items: center;
+		@media screen and (min-width: 425px) {
+			margin: -92px -25px 0;
+		}
+		@media screen and (min-width: 768px){
+			margin: -92px -50px 0;
+			padding: 92px 0 92px 50px;
+			justify-content: end;
+		}
+		img{
+			position: absolute;
+			width: 100vw;
+			height: 100vh;
+			object-fit: cover;
+			z-index: -1;
+		}
+		.opacity{
+			background-color: $black;
+			opacity: 0.4;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+
+		}
+	}
+	h1{
+		text-align: center;
+		@media screen and (max-width: 390px) {
+			word-break: break-word
+		}
+	}
+
+	h1{
+		color: $secondary;
+		margin: 0;
+	}
+
+	&__banner-content{
+		z-index: 1;
+		padding-left: 25px;
+		@media screen and (min-width: 768px) {
+			margin: 0 auto;
+			padding-left: 0;
+			padding-right: 50px;
+		}
+		p{
+			@media screen and (min-width: 768px) {
+				max-width: 671px;
+				margin: 0 auto;
+			}
+		}
+	}
+
+	&__about-me{
+		@media screen and (min-width: 768px) {
+			p{
+				max-width: 671px;
+				margin: 0 auto;
+				&:not(:first-of-type){
+					margin-top: 27px;
+				}
+			}	
+		}
+		
+	}
+
+	&__roadmap{
+		overflow-y: hidden;
+		
+	}
+
+	&__items{
+		max-width: 1200px;
+		margin:auto;
+		display: flex;
+		flex-wrap: wrap;
+		position: relative;
+	}
+
+	&__item{
+		width: 100%;
+		position: relative;
+		&:nth-child(odd){
+			padding-right: calc(50% + 30px);
+			@media screen and (max-width: 768px) {
+				padding: 0 0 30px;
+			}
+		}
+		&:nth-child(even){
+			padding-left: calc(50% + 30px);
+			@media screen and (max-width: 768px) {
+				padding: 0 0 30px;
+			}
+		}
+		&:last-of-type{
+			@media screen and (min-width: 768px) {
+				padding-bottom: 30px;
+			}
+		}
+		&::before{
+			content: '';
+			position: absolute;
+			width: 2px;
+			height: 100%;
+			background-color: $secondary;
+			left: calc(50% - 1px);
+			@media screen and (max-width: 768px) {
+				left: 7px;
+			}
+		}
+	}
+
+	&__dots{
+		height: 16px;
+		width: 16px;
+		background-color: $secondary;
+		position: absolute;
+		left: calc(50% - 8px);
+		border-radius: 50%;
+		top: 26px;
+		@media screen and (max-width: 768px) {
+			left: 0px;
+			top: 12px;
+		}
+	}
+
+	&__title{
+		padding: 0 20px;
+		@media screen and (max-width: 768px) {
+			padding-left: 50px;
+		}
+	}
+
+	&__content{
+		padding: 0 20px;
+		@media screen and (max-width: 768px) {
+			padding-left: 50px;
+		}
+		p{
+			margin: 0 0 40px;
+		}
+	}
+
+	&__roadmap-images{
+		display: flex;
+		gap: 25px;
+		img{
+			width: 50%;
+			aspect-ratio: 1/1;
+			max-width: 300px;
+		}
+	}
+	
+}
