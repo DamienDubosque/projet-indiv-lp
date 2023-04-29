@@ -1059,13 +1059,13 @@ header > div {
   }
 }
 .main-navigation ul .sub-menu {
-  flex-direction: column;
-  gap: 5px;
-  width: 24px;
+  flex-direction: column !important;
+  gap: 5px !important;
+  width: 24px !important;
 }
 .main-navigation ul .sub-menu a {
-  width: -moz-fit-content;
-  width: fit-content;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
 }
 
 body {
