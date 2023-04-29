@@ -1048,6 +1048,25 @@ header > div {
 .main-navigation ul {
   gap: 20px;
 }
+@media screen and (max-width: 768px) {
+  .main-navigation ul {
+    gap: 5px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main-navigation ul li a {
+    font-size: 13px;
+  }
+}
+.main-navigation ul .sub-menu {
+  flex-direction: column;
+  gap: 5px;
+  width: 24px;
+}
+.main-navigation ul .sub-menu a {
+  width: -moz-fit-content;
+  width: fit-content;
+}
 
 body {
   padding: 0 25px;
@@ -1072,7 +1091,7 @@ footer .main-navigation-footer ul {
   font-size: 14px;
   gap: 5px;
 }
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 768px) {
   footer .main-navigation-footer ul {
     grid-template-columns: 3fr repeat(3, 1fr);
     grid-template-rows: none;
@@ -1084,9 +1103,14 @@ footer .main-navigation-footer ul {
     grid-template-rows: none;
   }
 }
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 768px) {
   footer .main-navigation-footer ul li:nth-of-type(n+2) {
     text-align: end;
+  }
+}
+@media screen and (max-width: 768px) {
+  footer .main-navigation-footer ul #menu-item-68 {
+    margin-bottom: 20px;
   }
 }
 @media screen and (min-width: 768px) {

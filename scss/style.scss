@@ -1076,6 +1076,22 @@ header>div{
 	width: auto;
     ul{
         gap: 20px;
+		@media screen and (max-width: 768px) {
+			gap: 5px;
+		}
+		li a{
+			@media screen and (max-width: 768px) {
+				font-size: 13px;
+			}
+		}
+		.sub-menu{
+			flex-direction: column!important;
+			gap: 5px!important;
+			width: 24px!important;
+			a{
+				width: fit-content!important;
+			}
+		}
     }
 }
 
@@ -1098,7 +1114,7 @@ footer{
 	    grid-template-rows: repeat(4, 1fr);
 	    font-size: 14px;
 	    gap: 5px; 
-		@media screen and (min-width: 400px) {
+		@media screen and (min-width: 768px) {
 			grid-template-columns: 3fr repeat(3, 1fr);
 			grid-template-rows: none;
 		}
@@ -1107,11 +1123,15 @@ footer{
 			grid-template-rows: none;
         }
         li:nth-of-type(n+2){
-			@media screen and (min-width: 400px) {
+			@media screen and (min-width: 768px) {
 				text-align: end;
 			}
-            
         }
+		#menu-item-68{
+			@media screen and (max-width: 768px) {
+				margin-bottom: 20px;
+			}
+		}
     }
     @media screen and (min-width: 768px){
         margin: 0 -50px;

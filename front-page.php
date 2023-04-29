@@ -6,6 +6,7 @@
         $subheading = get_field( 'subheading_header_home' );
         $chapo = get_field( 'chapo_header_home' );
         $button = get_field( 'button_header_home' );
+        $link_banner = get_field( 'link_button_banner_home' );
     ?> 
 
 <div class="front-page">
@@ -15,7 +16,7 @@
             <h1><?php the_title() ?></h1>
             <h4><?php echo $subheading; ?></h4>
             <p><?php echo $chapo; ?></p>
-            <a href="/"><?php echo $button; ?></a>
+            <a target="_blank" href="<?php echo $link_banner; ?>"><?php echo $button; ?></a>
         </div>
     </div>
     <?php 
@@ -49,10 +50,11 @@
         $title_collection = get_field( 'title_collection' );
         $text_collection = get_field( 'text_collection' );
         $button_collection = get_field( 'button_collection' );
+        $link_button_collection = get_field( 'link_button_collection' );
     ?> 
         <h2><?php echo $title_collection; ?></h2>
         <p><?php echo $text_collection; ?></p>
-        <a href="/"><?php echo $button_collection; ?></a>
+        <a href="<?php echo $link_button_collection; ?>"><?php echo $button_collection; ?></a>
     </div>
 
     <div class="front-page__offf">
@@ -62,6 +64,7 @@
         $title_offf = get_field( 'title_offf' );
         $text_offf = get_field( 'text_offf' );
         $button_offf = get_field( 'button_offf' );
+        $link_button_offf = get_field( 'link_button_offf' );
     ?> 
         <h2><?php echo $title_offf; ?></h2>
         <div class="front-page__offf-container">
@@ -69,7 +72,7 @@
             <div class="front-page__offf-content">
                 <p><?php echo $text_offf; ?>
                 </p>
-                <a href="/"><?php echo $button_offf; ?></a>
+                <a href="<?php echo $link_button_offf; ?>"><?php echo $button_offf; ?></a>
             </div>
         </div>
     </div>
