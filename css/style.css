@@ -960,6 +960,21 @@ textarea {
   font-style: normal;
   font-display: swap;
 }
+::-webkit-scrollbar {
+  width: 7px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #141414;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: linear-gradient(300deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.5) 100%);
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -1465,6 +1480,7 @@ footer .main-navigation-footer ul {
      object-fit: contain;
 }
 
+/* ------------------- Collection -------------------- */
 .about-collection__banner {
   position: relative;
   height: 100vh;
@@ -1547,6 +1563,7 @@ footer .main-navigation-footer ul {
   display: flex;
   flex-wrap: wrap;
   position: relative;
+  overflow-x: hidden;
 }
 .about-collection__item {
   width: 100%;
@@ -1628,4 +1645,20 @@ footer .main-navigation-footer ul {
   width: 50%;
   aspect-ratio: 1/1;
   max-width: 300px;
+}
+.about-collection video {
+  aspect-ratio: 16/9;
+  width: 100%;
+  max-width: 1500px;
+  display: block;
+  margin: 0 auto;
+}
+.about-collection .motion-text {
+  margin-bottom: 64px;
+}
+@media screen and (min-width: 768px) {
+  .about-collection .motion-text {
+    max-width: 671px;
+    margin: 0 auto 64px;
+  }
 }/*# sourceMappingURL=style.css.map */

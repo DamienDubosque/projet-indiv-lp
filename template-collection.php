@@ -28,7 +28,10 @@
     </div>
 
     <div class="about-collection__roadmap">
-        <h2>The Roadmap</h2>
+    <?php 
+        $title_roadmap = get_field( 'title_roadmap' );
+    ?>
+        <h2><?php echo $title_roadmap ?></h2>
         <?php if(have_posts()) : ?>
         <div class="about-collection__items">
             <?php while(have_posts()) : the_post(); 
@@ -40,8 +43,11 @@
         <?php endif ?>
     </div>
 
-    <div class="front-page__nfts" style="margin-bottom: 100px"> 
-        <h2>Discover the GLOW Collection</h2>
+    <div class="front-page__nfts"> 
+    <?php 
+        $title_glow = get_field( 'title_glow_collection' );
+    ?>
+        <h2><?php echo $title_glow ?></h2>
         <?php if(have_posts()) : ?>
         <div class="front-page__nfts-container">
             <?php while(have_posts()) : the_post(); 
@@ -51,6 +57,17 @@
             endwhile; ?>
         </div>
         <?php endif ?>
+    </div>
+
+    <div class="front-page__nfts" style="margin-bottom: 100px"> 
+    <?php 
+        $title_motion = get_field( 'title_motion' );
+        $text_motion = get_field( 'text_motion' );
+        $video_nft_motion = get_field( 'video_nft' );
+    ?>
+        <h2><?php echo $title_motion ?></h2>
+        <p class="motion-text"><?php echo $text_motion ?></p>
+        <video controls><source src="<?php echo $video_nft_motion ?>"  type="video/mp4"></video>
     </div>
 </div>
 

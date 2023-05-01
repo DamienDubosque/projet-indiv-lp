@@ -20,6 +20,7 @@
         </div>
     </div>
     <?php 
+        $title_glow = get_field( 'title_glow_collection' );
         $nft = get_field( 'nft' ); 
         $img_nft   = wp_get_attachment_image( $nft, 'full' );
         $collecton_nft = get_field( 'collection_name' );
@@ -32,7 +33,7 @@
 
     
     <div class="front-page__nfts"> 
-        <h2>Discover the GLOW Collection</h2>
+        <h2><?php echo $title_glow ?></h2>
         <?php if(have_posts()) : ?>
         <div class="front-page__nfts-container">
             <?php while(have_posts()) : the_post(); 

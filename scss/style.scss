@@ -998,6 +998,24 @@ $black: #000;
     font-style: normal;
     font-display: swap;
 }
+
+::-webkit-scrollbar {
+	width: 7px;
+	height: 10px;
+}
+ 
+::-webkit-scrollbar-track {
+	background-color: #141414;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	background: linear-gradient(300deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.5) 100%); 
+}
+
 *{
 	padding: 0;
 	margin: 0;
@@ -1477,6 +1495,8 @@ footer{
 	}
 }
 
+/* ------------------- Collection -------------------- */
+
 .about-collection{
 	&__banner{
 		position: relative;
@@ -1561,6 +1581,7 @@ footer{
 		display: flex;
 		flex-wrap: wrap;
 		position: relative;
+		overflow-x: hidden;
 	}
 
 	&__item{
@@ -1636,5 +1657,20 @@ footer{
 			max-width: 300px;
 		}
 	}
-	
+
+	video{
+		aspect-ratio: 16/9;
+		width: 100%;
+		max-width: 1500px;
+		display: block;
+		margin: 0 auto;
+	}
+	.motion-text{
+		margin-bottom: 64px;
+		@media screen and (min-width: 768px) {
+			max-width: 671px;
+			margin: 0 auto 64px;
+		}
+		
+	}
 }
