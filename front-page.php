@@ -16,7 +16,7 @@
             <h1><?php the_title() ?></h1>
             <h4><?php echo $subheading; ?></h4>
             <p><?php echo $chapo; ?></p>
-            <a target="_blank" href="<?php echo $link_banner; ?>"><?php echo $button; ?></a>
+            <a target="_blank" class="btn-hover" href="<?php echo $link_banner; ?>"><?php echo $button; ?></a>
         </div>
     </div>
     <?php 
@@ -55,7 +55,7 @@
     ?> 
         <h2><?php echo $title_collection; ?></h2>
         <p><?php echo $text_collection; ?></p>
-        <a href="<?php echo $link_button_collection; ?>"><?php echo $button_collection; ?></a>
+        <a class="btn-hover" href="<?php echo $link_button_collection; ?>"><?php echo $button_collection; ?></a>
     </div>
 
     <div class="front-page__offf">
@@ -73,7 +73,7 @@
             <div class="front-page__offf-content">
                 <p><?php echo $text_offf; ?>
                 </p>
-                <a href="<?php echo $link_button_offf; ?>"><?php echo $button_offf; ?></a>
+                <a class="btn-hover" href="<?php echo $link_button_offf; ?>"><?php echo $button_offf; ?></a>
             </div>
         </div>
     </div>
