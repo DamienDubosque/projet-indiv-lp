@@ -946,6 +946,10 @@ textarea {
 }
 
 /* ------------------- CSS custom -------------------- */
+#cn-notice-text {
+  color: white !important;
+}
+
 @font-face {
   font-family: "Monument Extended";
   src: url("../fonts/MonumentExtended-Ultrabold.woff2") format("woff2"), url("../fonts/MonumentExtended-Ultrabold.woff") format("woff"), url("../fonts/MonumentExtended-Ultrabold.ttf") format("ttf");
@@ -1004,6 +1008,17 @@ h2 {
   h2 {
     font-size: 60px;
   }
+}
+
+.btn-card {
+  color: #000 !important;
+  padding: 15px;
+  font-size: 13px;
+  background-color: #FFF;
+}
+.btn-card:hover {
+  background-color: #000;
+  color: #FFF !important;
 }
 
 .btn-hover {

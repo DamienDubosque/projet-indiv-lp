@@ -41,7 +41,7 @@
                         echo '<p>' . $buy_text_nft . '</p>';
                         echo '<p>' . $price_nft . '</p>';
                         echo "</div>";
-                        echo '<a target="_blank" href="' . $link_nft . '">' . $text_button_nft . '</a>';
+                        echo '<a target="_blank" class="btn-card" href="' . $link_nft . '">' . $text_button_nft . '</a>';
                     echo "</div>";
 
                 echo "</div>";

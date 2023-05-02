@@ -979,6 +979,10 @@ $secondary: #FE9E75;
 $white: #FFF;
 $black: #000;
 
+#cn-notice-text{
+	color: white!important;
+}
+
 @font-face {
     font-family: 'Monument Extended';
     src: url('../fonts/MonumentExtended-Ultrabold.woff2') format('woff2'),
@@ -1041,6 +1045,17 @@ h2{
 	@media screen and (min-width: 768px) {
 		font-size: 60px;
 	}		
+}
+
+.btn-card{
+	color: $black!important;
+	padding: 15px;
+	font-size: 13px;
+	background-color: $white;
+	&:hover{
+		background-color: $black;
+		color: $white!important;
+	}
 }
 
 .btn-hover{
